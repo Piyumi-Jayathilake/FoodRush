@@ -34,17 +34,17 @@ const Navbar = () => {
     const renderDesktopAuthButton =() =>{
         return isAuthenticated ? (
             <button onClick={handleLogout} className='px-3 md:px-3 lg:px-6 py-1.5 md:py-2 lg:py-3 bg-gradient-to-br from-[#4cf452]
-          to-[#048b0b] text-[#ffffff] rounded-2xl font-bold hover:shadow-lg hover:shadow-amber-600/40 transition-all
-            transform hover:scale-[1.02] border-2 border-amber-600/20 flex items-center space-x-2
-            shadow-md shadow-amber-900/20 text-xs md:text-sm lg:text-sm'>
+          to-[#048b0b] text-[#ffffff] rounded-2xl font-bold hover:shadow-lg hover:shadow-[#048b0b]/40 transition-all
+            transform hover:scale-[1.02] border-2 border-[#048b0b]/20 flex items-center space-x-2
+            shadow-md shadow-[#048b0b]/20 text-xs md:text-sm lg:text-sm'>
                 <FiLogOut className='text-base md:text-lg lg:text-lg' />
                 <span className='text-shadow'>Logout</span>
             </button>
         ):(
             <button onClick={() => navigate('/login')} className='px-3 md:px-3 lg:px-6 py-1.5 md:py-2 lg:py-3 bg-gradient-to-br from-[#4cf452]
-          to-[#048b0b] text-[#ffffff] rounded-2xl font-bold hover:shadow-lg hover:shadow-amber-600/40 transition-all
-            transform hover:scale-[1.02] border-2 border-amber-600/20 flex items-center space-x-2
-            shadow-md shadow-amber-900/20 text-xs md:text-sm lg:text-sm'>
+          to-[#048b0b] text-[#ffffff] rounded-2xl font-bold hover:shadow-lg hover:shadow-[#048b0b]/40 transition-all
+            transform hover:scale-[1.02] border-2 border-[#048b0b]/20 flex items-center space-x-2
+            shadow-md shadow-[#048b0b]/20 text-xs md:text-sm lg:text-sm'>
                 <FiKey className='text-base md:text-lg lg:text-lg' />
                 <span className='text-shadow'>Login</span>
             </button>
@@ -82,10 +82,10 @@ const Navbar = () => {
      top-0 z-50 shadow-[0_25px_50px_-12px] front-vibes group/nav overflow-x-hidden'>
         <div className='absolute -top-3 left-1/2 -translate-x-1/2 w-full max-w-7xl px-4'>
             <div className='h-[6px] bg-gradient-to-r from-transparent via-[#4cf452]/50 to-transparent
-            shadow-[0_0_20px] shadow-amber-500/30'/>
+            shadow-[0_0_20px] shadow-[#048b0b]/30'/>
                 <div className='flex justify-between px-6'>
-                    <GiForkKnifeSpoon className='text-[#4cf452]/40 -mt-4 -ml-2 rotate-45' size={32}/>
-                    <GiForkKnifeSpoon className='text-[#4cf452]/40 -mt-4 -mr-2 rotate-45' size={32}/>
+                   {/* <GiForkKnifeSpoon className='text-[#4cf452]/40 -mt-4 -ml-2 rotate-45' size={32}/>
+                    <GiForkKnifeSpoon className='text-[#4cf452]/40 -mt-4 -mr-2 rotate-45' size={32}/>*/}
                 </div>
             
         </div>
@@ -122,7 +122,7 @@ const Navbar = () => {
                         ${
                             isActive ? 'border-[#048b0b]/50 bg-[#048b0b]/20 shadow-[inset_0_0_15px] shadow-[#048b0b]/20'
                             : 'border-[#048b0b]/30 hover:border-[#048b0b]/50'
-                        } shadow-md shadow-amber-900/20 `}>
+                        } shadow-md shadow-[#048b0b]/20 `}>
                             <span className='mr-2 text-sm md:text-[15px] lg:text-base
                             text-[#048b0b] group-hover:text-[#4cf452] transition-all'>
                                 {link.icon}
@@ -138,7 +138,7 @@ const Navbar = () => {
                     md:ml-3 lg:ml-6 mr-2 md:mr-3 lg:mr-4'>
                         <NavLink to='/cart' className='p-2 md:p-2.0 lg:p-3 text-amber-100 rounded-xl transition-all
                         relative border-2 border-[#048b0b]/50 hover:border-[#048b0b]/50 group hover:bg-[#048b0b]/20 
-                        hover:shadow-lg hover:shadow-amber-500/30 shadow-amber-900/20'>
+                        hover:shadow-lg hover:shadow-[#048b0b]/30 shadow-[#048b0b]/20'>
                             <FiShoppingCart className=' text-base md:text-lg  lg:text-lg'/>
                             {totalItems > 0 && (
                                 <span className='absolute -top-2 -right-2 bg-[#4cf452]
@@ -154,7 +154,7 @@ const Navbar = () => {
                 <div className='md:hidden flex items-center mr-2'>
                     <button className='text-[#4cf452] hover:text-[#4cf452] focus:outline-none transition-all
                     p-2 rounded-xl border-2 border-[#048b0b]/50 hover:border-[#048b0b]/50 relative shadow-md shadow-[#048b0b]/20
-                    hover:shadow-lg hover:shadow-[amber-500]/30' onClick={() => setIsOpen(!isOpen)}>
+                    hover:shadow-lg hover:shadow-[[#048b0b]]/30' onClick={() => setIsOpen(!isOpen)}>
                         <div className='space-y-2 relative'>
                             <span className={`block w-6 h-[2px] bg-current transition-all
                             ${isOpen ? 'rotate-45 translate-y-[7px]':''
