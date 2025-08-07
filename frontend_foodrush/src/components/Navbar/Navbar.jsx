@@ -33,16 +33,16 @@ const Navbar = () => {
     // Extract desktop auth button
     const renderDesktopAuthButton =() =>{
         return isAuthenticated ? (
-            <button onClick={handleLogout} className='px-3 md:px-3 lg:px-6 py-1.5 md:py-2 lg:py-3 bg-gradient-to-br from-[#4cf452]
-          to-[#048b0b] text-[#ffffff] rounded-2xl font-bold hover:shadow-lg hover:shadow-[#048b0b]/40 transition-all
+            <button onClick={handleLogout} className='px-3 md:px-3 lg:px-6 py-1.5 md:py-2 lg:py-3 bg-gradient-to-br from-[#048b0b] to-[#04720b]
+             hover:from-[#4ae02c] hover:to-[#17c703] text-[#d6f6c4] rounded-2xl font-bold hover:shadow-lg hover:shadow-[#048b0b]/40 transition-all
             transform hover:scale-[1.02] border-2 border-[#048b0b]/20 flex items-center space-x-2
             shadow-md shadow-[#048b0b]/20 text-xs md:text-sm lg:text-sm'>
                 <FiLogOut className='text-base md:text-lg lg:text-lg' />
                 <span className='text-shadow'>Logout</span>
             </button>
         ):(
-            <button onClick={() => navigate('/login')} className='px-3 md:px-3 lg:px-6 py-1.5 md:py-2 lg:py-3 bg-gradient-to-br from-[#4cf452]
-          to-[#048b0b] text-[#ffffff] rounded-2xl font-bold hover:shadow-lg hover:shadow-[#048b0b]/40 transition-all
+            <button onClick={() => navigate('/login')} className='px-3 md:px-3 lg:px-6 py-1.5 md:py-2 lg:py-3 bg-gradient-to-br from-[#048b0b] to-[#04720b]
+             hover:from-[#4ae02c] hover:to-[#17c703] text-[#d6f6c4] rounded-2xl font-bold hover:shadow-lg hover:shadow-[#048b0b]/40 transition-all 
             transform hover:scale-[1.02] border-2 border-[#048b0b]/20 flex items-center space-x-2
             shadow-md shadow-[#048b0b]/20 text-xs md:text-sm lg:text-sm'>
                 <FiKey className='text-base md:text-lg lg:text-lg' />
@@ -53,8 +53,8 @@ const Navbar = () => {
 //Extract mobile auth button
     const renderMobileAuthButton =() =>{
         return isAuthenticated ?(
-            <button onClick={handleLogout} className='w-full px-4 py-3 bg-gradient-to-br from-[#4cf452] to-[#048b0b]
-            text-[#ffffff] rounded-xl font-semibold flex items-center justify-center space-x-2
+            <button onClick={handleLogout} className='w-full px-4 py-3 bg-gradient-to-br from-[#048b0b] to-[#04720b] 
+            hover:from-[#4ae02c] hover:to-[#17c703] text-[#d6f6c4] rounded-xl font-semibold flex items-center justify-center space-x-2
             text-sm'>
                 <FiLogOut/>
                 <span>Logout</span>
@@ -63,8 +63,8 @@ const Navbar = () => {
              <button onClick={() => {
                 navigate('/login')
                 setIsOpen(false)
-             }} className='w-full px-4 py-3 bg-gradient-to-br from-[#4cf452] to-[#048b0b]
-            text-[#ffffff] rounded-xl font-semibold flex items-center justify-center space-x-2
+             }} className='w-full px-4 py-3 bg-gradient-to-br from-[#048b0b] to-[#04720b] hover:from-[#4ae02c] hover:to-[#17c703]
+            text-[#d6f6c4] rounded-xl font-semibold flex items-center justify-center space-x-2
             text-sm'>
                 <FiKey/>
                 <span>Login</span>
