@@ -81,7 +81,7 @@ const Banner = () => {
                 <img
                   src={imgSrc}
                   alt={`Orbiting ${index + 1}`}
-                  className='w-full h-full rounded-full border-2 border-white shadow-lg bg-white p-1
+                  className='w-full h-full rounded-full border-4 border-white shadow-lg bg-white p-2
                   object-cover hover:scale-110 transition-transform duration-300' />
               </div>
             ))}
