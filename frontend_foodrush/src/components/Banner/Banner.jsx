@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
-import { FaDownload, FaPlay, FaSearch } from 'react-icons/fa';
+import { FaDownload, FaPlay, FaSearch, FaTimes } from 'react-icons/fa';
 import {bannerAssets} from '../../assets/dummydata'
-
 
 const Banner = () => {
 
   const [searchQuery,setSearchQuery] = useState('');
   const [showVideo, setShowVideo] = useState(false);
-  const {bannerImage} = bannerAssets;
+  const {bannerImage,orbitImages,video} = bannerAssets;
 
-  const handleSearch = () =>{
+  const handleSearch = (e) =>{
     e.preventDefault();
     console.log('Searching for: ',searchQuery);
   }
@@ -40,7 +39,7 @@ const Banner = () => {
                 <div className='pl-6 pr-3 py-4'>
                   <FaSearch className='text-xl text-[#21800e]'/>
                 </div>
-                <input type='text' value={searchQuery} onChange={() => setSearchQuery(e.target.value)}
+                <input type='text' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder='Pick your next favourite meal... and dig in.'
                 className='w-full py-4 pr-6 bg-transparent outline-none placeholder-[#21800e] text-md
                 font-medium tracking-wide' />
@@ -66,17 +65,47 @@ const Banner = () => {
             </div>
           </div>
           {/* Right Section Image */}
-          <div className='flex-1 relative group mt-8 md:mt-0 min-h-[300px] sm-min-h-[400px]'>
+          <div className='flex-1 relative group mt-8 md:mt-0 min-h-[500px] sm:min-h-[600px] flex items-center justify-center'>
             {/*Main Image */}
             <div className='relative rounded-full p-1 bg-gradient-to-br from-[#048b0b] to-[#04720b]
-            shadow-2xl z-20 w-[400px] xs:w-[450px] sm:w-[500px] h-[400px] xs:h-[450px] sm:h-[500px] mx-auto'>
-              <img src={bannerImage} alt='Bannr' className='rounded-full border-4 xs:border-8 border-amber-900/50
+            shadow-2xl z-20 w-[300px] xs:w-[350px] sm:w-[400px] h-[300px] xs:h-[350px] sm:h-[400px]'>
+              <img src={bannerImage} alt='Banner' className='rounded-full border-4 xs:border-8 border-amber-900/50
               w-full h-full object-cover object-top'/>
             </div>
+            
+           {/* Orbital Images */}
+            {orbitImages.map((imgSrc, index) => (
+              <div key={index} className={`absolute left-1/2 top-1/2 z-10
+                ${index === 0 ? 'orbit' : `orbit-delay-${index*5}`}
+                w-[150px] xs:w-[200px] sm:w-[250px] h-[150px] xs:h-[200px] sm:h-[250px]`}>
+                <img
+                  src={imgSrc}
+                  alt={`Orbiting ${index + 1}`}
+                  className='w-full h-full rounded-full border-2 border-white shadow-lg bg-white p-1
+                  object-cover hover:scale-110 transition-transform duration-300' />
+              </div>
+            ))}
+
           </div>
         </div>
       </div>
-      
+      {/*Video Modal */}
+      {showVideo &&(
+        <div className=' fixed inset-0 flex items-center justify-center z-50 bg-black/90 backdrop-blur-lg p-4'>
+          <button onClick={() => setShowVideo(false)}
+          className ='absolute top-6 right-6 text-[#4ae02c] hover:text-[#04720b] text-3xl z-10 transition-all'>
+            <FaTimes />
+         </button>
+         <div className='w-full max-w-4xl mx-auto'>
+          <video 
+          controls autoPlay className='w-full aspect-video object-contain rounded-lg
+          shadow-2xl'>
+            <source src={video} type='video/mp4'/>
+          </video>
+          </div>
+          </div>
+          
+      )}
     </div>
   )
 }
