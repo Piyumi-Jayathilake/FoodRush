@@ -157,8 +157,8 @@ export const socialIcons = [
 ];
 
 // LOGIN 
-export const inputBase = "w-full rounded-lg bg-[#2D1B0E] text-amber-100 placeholder-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-600";
-export const iconClass = "absolute top-1/2 transform -translate-y-1/2 left-3 text-amber-400";
+export const inputBase = "w-full rounded-lg bg-[#024406] text-[#d6f6c4] placeholder-[#d6f6c4] focus:outline-none focus:ring-2 focus:ring-[#048b0b]";
+export const iconClass = "absolute top-1/2 transform -translate-y-1/2 left-3 text-[#d6f6c4]";
 
 // CONTACT
 export const contactFormFields = [
