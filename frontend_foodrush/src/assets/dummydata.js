@@ -11,14 +11,14 @@ import IA4 from './IA4.png';
 import IA5 from './IA5.png';
 import IA6 from './IA6.png';
 
-import Kebab from "./Kebab.png";
-import ChickenTikka from "./ChickenTikka.png";
-import ChickenChargha from "./ChickenChargha.png";
-import DesiChowmein from "./DesiChowmein.png";
-import GulabJamun from "./GulabJamun.png";
-import MasalaDosa from "./MasalaDosa.png";
-import PaneerTikka from "./PannerTikka.png";
-import PalakPaneer from "./PalakPaneer.png";
+import Kebab from "./Kebab.jpg";
+import Cheesepizza from "./Cheesepizza.jpg";
+import Sushi from "./Sushi.jpg";
+import Dumplings from "./dumplings.jpg";
+import donut from "./donut.jpg";
+import Scheesecake from "./stcheesecake.jpg";
+import Ramen from "./ramen.jpg";
+import Brownie from "./brownie.jpg";
 
 import BannerImage from "./BannerImage.jpg";
 import Image1 from "./Image1.jpg";
@@ -136,16 +136,16 @@ export const addButtonHover = "hover:gap-3 hover:shadow-lg hover:shadow-amber-50
 
 // SPECIAL MENU
 export const cardData = [
-    { id: 1, title: 'Kebab', rating: 4.5, hearts: 105, description: 'Juicy grilled meat with authentic spices', image: Kebab, popular: true, price: '₹40' },
-    { id: 2, title: 'Chicken Tikka', rating: 5.0, hearts: 155, description: 'Tender chicken marinated in sauce', image: ChickenTikka, bestseller: true, price: '₹140' },
-    { id: 3, title: 'Desi Chowmein', rating: 4.2, hearts: 85, description: 'Spicy Asian noodles with a local twist', image: DesiChowmein, price: '₹60' },
-    { id: 4, title: 'Chicken Chargha', rating: 4.8, hearts: 285, description: 'Crispy golden fried whole chicken', image: ChickenChargha, special: true, price: '₹200' },
+    { id: 1, title: 'Kebab - 4 pieces', rating: 4.5, hearts: 105, description: 'Juicy grilled meat with authentic spices', image: Kebab, popular: true, price: 'Rs 850' },
+    { id: 2, title: 'Cheese Pizza - Regular', rating: 5.0, hearts: 155, description: 'Hot, cheesy, and loaded with flavor the ultimate comfort pizza', image: Cheesepizza, bestseller: true, price: 'Rs 1000' },
+    { id: 3, title: 'Dumplings - 6 pack', rating: 4.2, hearts: 85, description: 'Soft, juicy dumplings bursting with delicious fillings in every bite!', image: Dumplings, price: 'Rs 950' },
+    { id: 4, title: 'Sushi - 6 pack', rating: 4.8, hearts: 285, description: 'Fresh, delicate sushi rolls crafted to perfection for every craving', image: Sushi, special: true, price: 'Rs 1500' },
 ];
 export const additionalData = [
-    { id: 5, title: 'Paneer Tikka', rating: 4.8, hearts: 210, description: 'Cottage cheese marinated in spices', image: PaneerTikka, popular: true, price: '₹220' },
-    { id: 6, title: 'Masala Dosa', rating: 4.5, hearts: 165, description: 'Crispy rice crepe with potato filling', image: MasalaDosa, price: '₹180' },
-    { id: 7, title: 'Palak Paneer', rating: 4.7, hearts: 190, description: 'Spinach curry with cottage cheese', image: PalakPaneer, price: '₹200' },
-    { id: 8, title: 'Gulab Jamun', rating: 4.9, hearts: 275, description: 'Golden dumplings in rose syrup', image: GulabJamun, special: true, price: '₹30' },
+    { id: 5, title: 'Ramen - Spice Level 1', rating: 4.8, hearts: 210, description: 'Warm, comforting ramen with a soft boild egg and mild spice kick perfect for a cozy meal. ', image: Ramen, popular: true, price: 'Rs 700' },
+    { id: 6, title: 'Strawberry Cheesecake slice', rating: 4.5, hearts: 165, description: 'Creamy strawberry cheesecake slice with a sweet, fruity finish in every bite.', image: Scheesecake,bestseller: true, price: 'Rs 800' },
+    { id: 7, title: 'Brownie - 6 pack', rating: 4.7, hearts: 190, description: 'Rich, fudgy brownie with a perfect balance of gooey and chewy goodness', image: Brownie, price: 'Rs 650 ' },
+    { id: 8, title: 'Donuts - 6 pack', rating: 4.9, hearts: 275, description: 'Fluffy, melt-in-your-mouth donuts in 6 delightful flavors, glazed to perfection', image: donut, special: true, price: 'Rs 600' },
 ];
 
 // FOOTER 
