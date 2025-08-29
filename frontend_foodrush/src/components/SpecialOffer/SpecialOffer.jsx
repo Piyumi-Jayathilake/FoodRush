@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
-import { cardData,additionalData } from '../../assets/dummydata';
+import { cardData,additionalData, addButtonBase, addButtonHover, commonTransition } from '../../assets/dummydata';
 import { useCart } from '../../CartContext/CartContext';
+import { FaFire, FaHeart, FaPlus, FaStar } from 'react-icons/fa';
+import { HiMinus, HiPlus} from 'react-icons/hi'
+import { replace } from 'react-router-dom';
+import FloatingParticle from '../FloatingParticle/FloatingParticle';
 
 const SpecialOffer = () => {
 
@@ -32,43 +36,75 @@ const SpecialOffer = () => {
                             <div className='relative h-72 overflow-hidden'>
                                 <img src={item.image} alt={item.title} className='w-full h-full object-cover
                                 brightness-90 group-hover:brightness-110 transition-all duration-500' />
-                            </div>
-                            <div className='p-6 text-gray-800'>
-                                <h3 className='text-xl font-bold mb-2'>{item.title}</h3>
-                                <p className='text-gray-600 mb-4'>{item.description}</p>
-                                <div className='flex justify-between items-center'>
-                                    <span className='text-2xl font-bold text-[#048b0b]'>${item.price}</span>
-                                    <div className='flex items-center gap-2'>
-                                        {quantity > 0 ? (
-                                            <div className='flex items-center gap-2'>
-                                                <button onClick={() => updateQuantity(item.id, quantity - 1)}
-                                                    className='bg-[#048b0b] text-white px-3 py-1 rounded hover:bg-[#4cf452]'>
-                                                    -
-                                                </button>
-                                                <span className='px-3 py-1 bg-gray-100 rounded'>{quantity}</span>
-                                                <button onClick={() => updateQuantity(item.id, quantity + 1)}
-                                                    className='bg-[#048b0b] text-white px-3 py-1 rounded hover:bg-[#4cf452]'>
-                                                    +
-                                                </button>
-                                            </div>
-                                        ) : (
-                                            <button onClick={() => addToCart(item, 1)}
-                                                className='bg-gradient-to-r from-[#048b0b] to-[#04720b] text-[#d6f6c4] px-4 py-2 rounded'>
-                                                Add to Cart
-                                            </button>
-                                        )}
-                                    </div>
+                                <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent
+                                to-black/90'/>
+                                <div className='absolute bottom-4 left-4 right-4 flex justify-between items-center
+                                bg-[#048b0b]/20 backdrop-blur-sm px-4 py-2 rounded-full'>
+                                    <span className='flex items-center gap-2 text-amber-400'>
+                                        <FaStar className='text-xl drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]'/>
+                                        <span className='font-bold'>{item.rating}</span>
+                                    </span>
+                                    <span className='flex items-center gap-2 text-[#fb3d03]'>
+                                        <FaHeart className='text-xl animate-heartbeat' />
+                                        <span className='font-bold'>{item.hearts}</span>
+                                    </span>
                                 </div>
+                            </div>
+
+                            <div className='p-6 text-gray-800 relative z-10'>
+                                <h3 className='text-2xl font-bold mb-2 bg-clip-text font-[Playfair_Display] italic'>{item.title}</h3>
+                                <p className='text-gray-600 mb-5 leading-relaxed tracking-wide'>{item.description}</p>
+                                <div className='flex justify-between items-center gap-4'>
+                                    <span className='text-2xl font-bold text-[#048b0b] flex-1'>{item.price}</span>
+                                    {cartItem ?(
+                                        <div className='flex items-center gap-3'>
+                                            <button onClick={() =>{
+                                                quantity >1 ? updateQuantity(item.id,quantity-1)
+                                                : removeFromCart(item.id)
+                                            }} className='w-8 h-8 rounded-full bg-[#048b0b] flex items-center justify-center hover:bg-[#4cf452]
+                                            transition-all duration-200 active:scale-95'>
+                                                <HiMinus/>
+                                            </button>
+                                            <span className='w-8 text-center text-[#d6f6c4] font-cinzel'>
+                                                {quantity}
+                                            </span>
+                                            <button onClick={() => updateQuantity(item.id,quantity+1)}
+                                            className='w-8 h-8 rounded-full bg-[#048b0b] flex items-center justify-center hover:bg-[#4cf452]
+                                                transition-all duration-200 active:scale-95'>
+                                                <HiPlus className='w-4 h-4 text-[#d6f6c4] '/>
+                                            </button>
+                                        </div>
+                                    ):(
+                                        <button onClick={() => addToCart({...item,name:item.title, price:parseFloat(item.price,replace('Rs',''))},1)}
+                                        className={`${addButtonBase} ${addButtonHover} ${commonTransition}`}>
+                                            <div className='absolute inset-0 bg-gradient-to-r from-[#048b0b] to-transparent 
+                                            opacity-0 hover:opacity-100 transition-opacity duration-300'/>
+                                            <FaPlus className='text-lg transition-transform'/>
+                                            <span className='relative z-10 '>Add</span>
+                                        </button>
+                                    ) }
+                                    
+                                </div>
+                            </div>
+                            <div className='absolute inset-0 rounded-3xl pointer-events-none border-transparent
+                            group-hover:border-[#048b0b] transition-all duration-500' />
+                            <div className='opacity-0 group-hover:opacity-100'>
+                                <FloatingParticle />
                             </div>
                         </div>
                     )
                 })}
             </div>
-            <div className='text-center mt-12'>
+            <div className='mt-12 flex justify-center'>
                 <button onClick={() => setShowAll(!showAll)}
-                    className='bg-gradient-to-r from-[#048b0b] to-[#04720b] hover:from-[#4ae02c] hover:to-[#17c703] text-[#d6f6c4] px-8 py-3 rounded-full
-                    transform hover:scale-105 transition-all duration-300
-                    font-semibold shadow-lg hover:shadow-xl'>
+                    className='flex items-center gap-3 bg-gradient-to-r from-[#048b0b] to-[#04720b] 
+                    hover:from-[#4ae02c] hover:to-[#17c703] text-[#d6f6c4] px-8 py-4 rounded-2xl
+                    transform hover:gap-4 hover:scale-105 transition-all duration-300 text-lg uppercase tracking-wider 
+                    font-bold hover:shadow-[#048b0b]/50 hover:shadow-xl group border-2 border-[#04720b] relative
+                    overflow-hidden'>
+                        <div className='absolute inset-0 bg-gradient-to-r fill-[#048b0b] via-transparent to-[#04720b]
+                        opacity-0 group-hover:opacity-100 transition-opacity duration-300'/>
+                        <FaFire className='text-xl animate-pulse'/>
                     {showAll ? 'Show Less' : 'View All Offers'}
                 </button>
             </div>

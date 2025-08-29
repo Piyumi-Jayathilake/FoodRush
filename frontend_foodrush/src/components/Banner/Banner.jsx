@@ -20,10 +20,10 @@ const Banner = () => {
         <div className='max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10'>
           {/*Left Content */}
           <div className='flex-1 space-y-8 relative md:pr-19 text-center md:text-left'>
-            <h1 className='text-4xl sm:text-5xl md:text-4xl lg:text-6xl font-bold leading-tight font-serif
-            drop-shadow-md'>
+            <h1 className='text-4xl sm:text-5xl md:text-4xl lg:text-6xl font-bold leading-tight font-[Playfair_Display]
+            drop-shadow-md '>
               Serve Fresh <br/>
-              <span className='text-[#21800e] bg-gradient-to-r from-[#048b0b] to-[#048b0b] bg-clip-text'>
+              <span className='text-[#21800e] bg-gradient-to-r from-[#048b0b] to-[#048b0b] bg-clip-text font-[Playfair_Display]'>
                 Delivered with Love
               </span>
             </h1>

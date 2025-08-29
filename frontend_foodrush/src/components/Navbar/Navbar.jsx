@@ -211,7 +211,7 @@ const Navbar = () => {
                         &times;              
                     </button>
                      <h2 className='text-2xl font-bold bg-gradient-to-r from-[#4cf452] to-[#048b0b]
-                        bg-clip-text text-transparent mb-4 text-center'>
+                        bg-clip-text text-transparent mb-4 text-center font-[Playfair_Display]'>
                             FoodRush
                         </h2>
                         <Login onLoginSuccess={handleLoginSuccess} onClose={() => navigate('/')} />

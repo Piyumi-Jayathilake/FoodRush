@@ -131,8 +131,8 @@ export const aboutfeature = [
 
 // SPECIAL OFFER
 export const commonTransition = "transition-all duration-300";
-export const addButtonBase = "flex items-center gap-2 bg-gradient-to-r from-red-600 to-amber-600 text-white px-5 py-2.5 rounded-xl font-bold border-2 border-amber-400/30";
-export const addButtonHover = "hover:gap-3 hover:shadow-lg hover:shadow-amber-500/30 active:scale-95 relative overflow-hidden";
+export const addButtonBase = "flex items-center gap-2 bg-gradient-to-r from-[#048b0b] to-[#04720b] text-white px-5 py-2.5 rounded-xl font-bold border-2 border-amber-400/30";
+export const addButtonHover = "hover:gap-3 hover:shadow-lg hover:shadow-[#048b0b]/50 active:scale-95 relative overflow-hidden";
 
 // SPECIAL MENU
 export const cardData = [
@@ -143,7 +143,7 @@ export const cardData = [
 ];
 export const additionalData = [
     { id: 5, title: 'Ramen - Spice Level 1', rating: 4.8, hearts: 210, description: 'Warm, comforting ramen with a soft boild egg and mild spice kick perfect for a cozy meal. ', image: Ramen, popular: true, price: 'Rs 700' },
-    { id: 6, title: 'Strawberry Cheesecake slice', rating: 4.5, hearts: 165, description: 'Creamy strawberry cheesecake slice with a sweet, fruity finish in every bite.', image: Scheesecake,bestseller: true, price: 'Rs 800' },
+    { id: 6, title: 'Strawberry Cheesecake', rating: 4.5, hearts: 165, description: 'Creamy strawberry cheesecake slice with a sweet, fruity finish in every bite.', image: Scheesecake,bestseller: true, price: 'Rs 800' },
     { id: 7, title: 'Brownie - 6 pack', rating: 4.7, hearts: 190, description: 'Rich, fudgy brownie with a perfect balance of gooey and chewy goodness', image: Brownie, price: 'Rs 650 ' },
     { id: 8, title: 'Donuts - 6 pack', rating: 4.9, hearts: 275, description: 'Fluffy, melt-in-your-mouth donuts in 6 delightful flavors, glazed to perfection', image: donut, special: true, price: 'Rs 600' },
 ];
